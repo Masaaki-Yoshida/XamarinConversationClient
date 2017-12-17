@@ -1,14 +1,30 @@
 ﻿using Xamarin.Forms;
+using Prism.Unity;
+using System.ComponentModel;
+using Prism.Services;
+using System.Windows.Input;
+using Prism.Commands;
+using Prism;
+using Prism.Ioc;
+using XamarinConversationClient.Views;
 
 namespace XamarinConversationClient
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
-        public App()
+        public App(IPlatformInitializer initializer = null) : base(initializer) { }
+
+        protected override void OnInitialized()
         {
             InitializeComponent();
 
-            MainPage = new XamarinConversationClientPage();
+            NavigationService.NavigateAsync("NavigationPage/LoginView");
+        }
+
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<LoginView>();
         }
 
         protected override void OnStart()
