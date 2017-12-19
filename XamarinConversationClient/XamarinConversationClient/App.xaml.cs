@@ -18,13 +18,15 @@ namespace XamarinConversationClient
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("NavigationPage/LoginView");
+            NavigationService.NavigateAsync("NavigationPage/ChatView");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<LoginView>();
+            containerRegistry.RegisterForNavigation<ChatView>();
+
         }
 
         protected override void OnStart()

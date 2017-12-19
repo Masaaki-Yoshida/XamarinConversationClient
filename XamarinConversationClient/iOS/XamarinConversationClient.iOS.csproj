@@ -117,6 +117,29 @@
     <Reference Include="Prism.Unity.Forms">
       <HintPath>..\packages\Prism.Unity.Forms.7.0.0.336-pre\lib\netstandard2.0\Prism.Unity.Forms.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Wdc.System.Net.Http.Formatting.NetStandard.1.0.0\lib\netstandard1.1\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="IBM.WatsonDeveloperCloud">
+      <HintPath>..\packages\IBM.WatsonDeveloperCloud.1.2.0\lib\netstandard1.3\IBM.WatsonDeveloperCloud.dll</HintPath>
+    </Reference>
+    <Reference Include="IBM.WatsonDeveloperCloud.Conversation.v1">
+      <HintPath>..\packages\IBM.WatsonDeveloperCloud.Conversation.v1.1.2.0\lib\netstandard1.3\IBM.WatsonDeveloperCloud.Conversation.v1.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive">
+      <HintPath>..\packages\System.Reactive.4.0.0-preview00001\lib\netstandard1.3\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="ReactiveProperty">
+      <HintPath>..\packages\ReactiveProperty.4.0.0-pre4\lib\Xamarin.iOS10\ReactiveProperty.dll</HintPath>
+    </Reference>
+    <Reference Include="ReactiveProperty.iOS">
+      <HintPath>..\packages\ReactiveProperty.4.0.0-pre4\lib\Xamarin.iOS10\ReactiveProperty.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamarinConversationClient\XamarinConversationClient.csproj">
