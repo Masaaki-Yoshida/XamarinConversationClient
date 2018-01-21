@@ -7,6 +7,9 @@ using Prism.Commands;
 using Prism;
 using Prism.Ioc;
 using XamarinConversationClient.Views;
+using IBM.WatsonDeveloperCloud.Conversation.v1;
+using IBM.WatsonDeveloperCloud.Conversation.v1.Model;
+using XamarinConversationClient.Models;
 
 namespace XamarinConversationClient
 {
@@ -17,8 +20,7 @@ namespace XamarinConversationClient
         protected override void OnInitialized()
         {
             InitializeComponent();
-
-            NavigationService.NavigateAsync("NavigationPage/ChatView");
+            NavigationService.NavigateAsync("NavigationPage/LoginView");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -26,7 +28,7 @@ namespace XamarinConversationClient
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<LoginView>();
             containerRegistry.RegisterForNavigation<ChatView>();
-
+            containerRegistry.RegisterSingleton(typeof(IConversationModel),typeof(ConversationModel));
         }
 
         protected override void OnStart()

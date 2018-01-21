@@ -3,7 +3,100 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms" 
+    xmlns:local="clr-namespace:XamarinConversationClient.Extensions;assembly=XamarinConversationClient" 
+    xmlns:effect="clr-namespace:XamarinConversationClient.Effects;assembly=XamarinConversationClient" 
+    xmlns:bhv="clr-namespace:XamarinConversationClient.Behaviors;assembly=XamarinConversationClient"  
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
     prism:ViewModelLocator.AutowireViewModel="True" 
     x:Class="XamarinConversationClient.Views.LoginView">
+
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Image 
+                    Grid.Row="0"
+                    Aspect="AspectFit"
+                    HeightRequest="200"
+                    Margin="0,0,0,0" 
+                    Source="{local:ImageResource XamarinConversationClient.Images.cropped_bluemix.png}" 
+                />
+
+                <StackLayout
+                    Grid.Row="1"
+                    Padding="20,4,20,0"
+                    Spacing="0">
+
+                    <Label 
+                        StyleClass="h2" 
+                        HorizontalOptions="Start" 
+                        VerticalOptions="Start" 
+                        BackgroundColor="Transparent" 
+                        Text="手動入力される場合" 
+                    />
+                    
+                    <Entry 
+                        Margin="0,5,0,0"                       
+                        VerticalOptions="Start" 
+                        Keyboard="Email"
+                        Placeholder="username" 
+                        Text="{Binding UserName.Value, Mode=TwoWay}" 
+                    />
+                    
+                    <Entry 
+                        Margin="0,5,0,0"                       
+                        VerticalOptions="Start"
+                        IsPassword="true" 
+                        Placeholder="password" 
+                        Text="{Binding Password.Value, Mode=TwoWay}"
+                    />
+
+                    <BoxView 
+                        Margin="0,20,0,20"                       
+                        StyleClass="border" />    
+
+                    <Label 
+                        Margin="0,5,0,0"                       
+                        StyleClass="h2" 
+                        HorizontalOptions="Start" 
+                        VerticalOptions="Start" 
+                        BackgroundColor="Transparent" 
+                        Text="資格情報ページからJSON形式で入力される場合" >
+                    </Label>
+
+                    <Editor
+                        Margin="0,5,0,0"    
+                        HeightRequest="80"
+                        Text="{Binding JsonCode.Value, Mode=TwoWay}">
+                        <Editor.Effects>
+                            <effect:BorderEffect/>
+                        </Editor.Effects>
+                    </Editor>
+
+                    <Label
+                        Margin="0,5,0,0"                       
+                        StyleClass="textLink"
+                        Text="Watson Developer Cloudログインはこちら">
+                        <Label.Behaviors>
+                            <bhv:OpenUrlBehavior TargetParameter="https://console.bluemix.net/dashboard/apps"/>
+                        </Label.Behaviors>
+                    </Label>
+                    
+                    <Button 
+                        HorizontalOptions="FillAndExpand"
+                        Text="ログイン" 
+                        Command="{Binding LoginCommand}"
+                        Margin="0,10,0,0"
+                        StyleClass="blueBtn"
+                    />            
+                </StackLayout>
+            </Grid>
+
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>
