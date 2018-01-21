@@ -5,6 +5,74 @@
     xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
     x:Class="XamarinConversationClient.App">
 	<Application.Resources>
-		<!-- Application resource dictionary -->
-	</Application.Resources>
+        <ResourceDictionary>
+            <Style TargetType="NavigationPage">
+                <Setter Property="HasNavigationBar" Value="True" />
+                <Setter Property="BarTextColor" Value="White" />
+                <Setter Property="BarBackgroundColor" Value="#284DB3" />
+            </Style>
+
+            <!-- Labelの共通レイアウト -->
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+
+            <!-- Labelの見出し -->
+            <Style TargetType="Label" Class="h1">
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style TargetType="Label" Class="h2">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <Style TargetType="Label" Class="h3">
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <!-- リンクのレイアウト -->
+            <Style TargetType="Label" Class="textLink" >
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="Blue" />
+            </Style>
+            
+            <!-- Editorの共通レイアウト -->
+            <Style TargetType="Editor">
+                <Setter Property="FontSize" Value="10" />
+            </Style>
+            
+            <!-- Entryの共通レイアウト -->
+            <Style TargetType="Entry">   
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Margin" Value="0,5,0,5" />
+            </Style>           
+            
+            <!-- ボタンの共通レイアウト -->
+            <Style TargetType="Button">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+
+            <!-- 青いボタン -->
+            <Style TargetType="Button" Class="blueBtn">
+                <Setter Property="BackgroundColor" Value="#223eaf" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+            <!-- 水色のボタン -->
+            <Style TargetType="Button" Class="skyblueBtn">
+                <Setter Property="BackgroundColor" Value="#1e90ff" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+            <!-- Border -->
+            <Style TargetType="BoxView" Class="border">
+                <Setter Property="HeightRequest" Value="1" />
+                <Setter Property="Color" Value="Silver" />
+            </Style>
+            
+        </ResourceDictionary>
+    </Application.Resources>
 </prism:PrismApplication >
